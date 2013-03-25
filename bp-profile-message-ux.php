@@ -13,21 +13,36 @@ add_action('bp_head', 'bp_profile_message_ux_thickbox');
 // send a Private Message
 function bp_profile_message_ux_send_private_message() { 
 
-	if( isset($_POST['private-message-hidden']) ) {
+	if ( !is_user_logged_in() || !isset($_POST['private-message-hidden']) ) 
+		return;
 	
-		check_admin_referer("private_message_check");
+	check_admin_referer("private_message_check");
+	
+	$content_feedback_empty = 	__( 'Please enter some content in the Private Message form.', 'bp-profile-message-ux' );
+	$content_feedback_success = __( 'Private Message was sent!', 'bp-profile-message-ux' );
+	$content_feedback_error =	__( 'There was an error sending that Private Message. Please make sure you fill out both fields.', 'bp-profile-message-ux' );
 
-		$sender_id = bp_loggedin_user_id();
-		$recip_id = bp_displayed_user_id();
-
-		if ( $thread_id = messages_new_message( array('sender_id' => $sender_id, 'subject' => $_POST['private_message_subject'], 'content' => $_POST['private_message_content'], 'recipients' => $recip_id ) ) ) 
-			bp_core_add_message( __( 'Private Message was sent.', 'bp-profile-message-ux' ) );
-			
-		else 
-			bp_core_add_message( __( 'There was an error sending that Private Message. Please make sure you fill out both fields.', 'bp-profile-message-ux' ), 'error' );
-		
+	// No private message so provide feedback and redirect
+	if ( empty( $_POST['private_message_content'] ) ) {
+		bp_core_add_message( $content_feedback_empty, 'error' );
 		bp_core_redirect( bp_displayed_user_domain() );
-	}
+	}	
+	
+	
+	$sender_id = bp_loggedin_user_id();
+	$recip_id = bp_displayed_user_id();
+
+		
+		
+		
+	if ( $thread_id = messages_new_message( array('sender_id' => $sender_id, 'subject' => $_POST['private_message_subject'], 'content' => $_POST['private_message_content'], 'recipients' => $recip_id ) ) ) 
+			bp_core_add_message( $content_feedback_success );
+			
+	else 
+		bp_core_add_message( $content_feedback_error, 'error' );
+		
+	bp_core_redirect( bp_displayed_user_domain() );
+	
 }
 add_action( 'wp', 'bp_profile_message_ux_send_private_message', 3 );
 
