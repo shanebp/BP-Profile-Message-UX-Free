@@ -33,8 +33,6 @@ function bp_profile_message_ux_send_private_message() {
 	$recip_id = bp_displayed_user_id();
 
 		
-		
-		
 	if ( $thread_id = messages_new_message( array('sender_id' => $sender_id, 'subject' => $_POST['private_message_subject'], 'content' => $_POST['private_message_content'], 'recipients' => $recip_id ) ) ) 
 			bp_core_add_message( $content_feedback_success );
 			
