@@ -1,20 +1,17 @@
 <?php
 /*
-Plugin Name: BP Profile Message UX
+Plugin Name: BP Profile Message UX Free
 Description: A BuddyPress plugin. Replaces the functionality for Public and Private buttons so that you stay on a profile page.  
 Author: shanebp
-Version: 1.0
+License: GPLv2 
 Author URI: http://philogames.com/contact
-*/
-
-/**
- * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License
+Version: 1.1.3
 */
 
 
 if ( !defined( 'ABSPATH' ) ) exit;  
 
-define( 'BP_PROFILE_MESSAGE_UX', '1.0' );
+define( 'BP_PROFILE_MESSAGE_UX_FREE', '1.1.3' );
 
 function bp_profile_message_ux_init() {
     require( dirname( __FILE__ ) . '/bp-profile-message-ux.php' );
