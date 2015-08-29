@@ -19,7 +19,7 @@ function bp_profile_message_ux_send_private_message() {
 	check_admin_referer("private_message_check");
 	
 	$content_feedback_empty = 	__( 'Please enter some content in the Private Message form.', 'bp-profile-message-ux' );
-	$content_feedback_success = __( 'Private Message was sent.', 'bp-profile-message-ux' );
+	$content_feedback_success = __( 'Private Message was sent!', 'bp-profile-message-ux' );
 	$content_feedback_error =	__( 'There was an error sending that Private Message. Please make sure you fill out both fields.', 'bp-profile-message-ux' );
 
 	// No private message so provide feedback and redirect
@@ -61,7 +61,7 @@ function bp_profile_private_message_ux_button( $button ) {
 					
 	$button_divs .= '<div class="generic-button" id="send-private-message">';
 	
-	$button_divs .= '<a href="#TB_inline?width=300&height=310&inlineId=create-private-message-ux" class="thickbox" 		id="private-button-id" title="';
+	$button_divs .= '<a href="#TB_inline?width=300&height=420&inlineId=create-private-message-ux" class="thickbox" 		id="private-button-id" title="';
 	
 	$button_divs .= $button_title . ' ' . bp_get_displayed_user_username() . '">';
 	
@@ -102,7 +102,7 @@ function bp_profile_message_ux_send_public_message() {
 	check_admin_referer( 'public_message_check' );
 
 	$content_feedback_empty = 	__( 'Please enter some content in the Public Message form.', 'bp-profile-message-ux' );
-	$content_feedback_success = __( 'Your Public Message has been posted.', 'bp-profile-message-ux' );
+	$content_feedback_success = __( 'Your Public Message has been posted!', 'bp-profile-message-ux' );
 	$content_feedback_error =	__( 'There was an error when posting your Public Message, please try again.', 'bp-profile-message-ux' );
 	
 	// Get public message content
@@ -146,7 +146,7 @@ function bp_profile_public_message_ux_button( $button ) {
 
 	$button_divs .= '<div class="generic-button" id="send-public-message">';	
 
-	$button_divs .= '<a href="#TB_inline?width=300&height=225&inlineId=create-public-message-ux" class="thickbox" id="public-button-id" title="';
+	$button_divs .= '<a href="#TB_inline?width=300&height=320&inlineId=create-public-message-ux" class="thickbox" id="public-button-id" title="';
 	
 	$button_divs .= $button_title . ' ' . bp_get_displayed_user_username() . '">';
 	
@@ -174,4 +174,3 @@ function bp_profile_public_message_ux_button( $button ) {
 		
 }
 add_filter( 'bp_get_send_public_message_button', 'bp_profile_public_message_ux_button', 1, 1 );
-?>
