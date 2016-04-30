@@ -81,7 +81,7 @@ function bp_profile_private_message_ux_button( $button ) {
 
 	$button_divs .=	'<input type="hidden" name="private-message-hidden" value="1"/>';
 
-	$button_divs .=	'<input name="private_message_send" id="private_message_send" type="submit" name="submit" class="button button-primary" value="';
+	$button_divs .=	'<input name="private_message_send" id="private_message_send" type="submit" name="submit" onclick="this.disabled=true;this.parentNode.submit();" class="button button-primary" value="';
 	
 	$button_divs .=	$send_button_label . '"/>' . wp_nonce_field( 'private_message_check' ) . '</form></div>';
 	
@@ -164,7 +164,7 @@ function bp_profile_public_message_ux_button( $button ) {
 
 	$button_divs .=	'<input type="hidden" name="public-message-hidden" value="1"/>';
 
-	$button_divs .=	'<input name="public_message_send" id="public_message_send" type="submit" name="submit" class="button button-primary" value="';
+	$button_divs .=	'<input name="public_message_send" id="public_message_send" type="submit" name="submit" onclick="this.disabled=true;this.parentNode.submit();" class="button button-primary" value="';
 	
 	$button_divs .=	$send_button_label . '"/>' . wp_nonce_field( 'public_message_check' ) . '</form></div>';
 
