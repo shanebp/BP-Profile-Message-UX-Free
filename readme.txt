@@ -4,10 +4,10 @@ Donate link: http://www.philopress.com/donate/
 Author URI: http://philopress.com/contact/
 Plugin URI: http://www.philopress.com/products/buddymessageux-free/
 Tags: BuddyPress, plugins, members, profile, message
-Requires at least: WP 3.5 and BP 1.6.5
-Tested up to: WP 4.5.1
+Requires at least: 3.5
+Tested up to: 4.5.2
 License: GPLv2 
-Stable tag: 1.4
+Stable tag: 1.5
 
 This BuddyPress plugin replaces the functionality for the Public Message and Private Message buttons on profile pages.
 
@@ -21,8 +21,13 @@ Fortunately, BuddyPress makes it easy to replace the functionality for those but
 With this plugin you can stay on a profile page and send private or public messages to that member.  
 
 This plugin uses the default WordPress 'thickbox' code. 
-If you need the ability to style the overlay or adjust the javascript, , or prefer the use of ajax, 
-you might be interested in the premium version here:
+If you need...
+ 
+* the ability to style the overlay 
+* adjust the javascript
+* or prefer the use of ajax
+ 
+... you might be interested in the premium version here:
 http://www.philopress.com/products/buddymessageux/
 
 
@@ -50,5 +55,10 @@ http://www.philopress.com/products/buddymessageux/
 = 1.4 =
 * Tested with WP 4.3
 
+= 1.5 =
+* Adds check for profile page to avoid conflict with Kleo theme
+
 == Upgrade Notice == 
 
+= 1.5 =
+* Adds check for profile page to avoid conflict with Kleo theme

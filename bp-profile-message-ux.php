@@ -136,7 +136,6 @@ function bp_profile_public_message_ux_button( $button ) {
 	if( !is_user_logged_in() || bp_is_my_profile() )	
 		return;
 
-		
 	$button_title = 		__('Send a public message to', 'bp-profile-message-ux');
 	$button_label = 		__('Public Message', 'bp-profile-message-ux');	
 	$send_button_label = 	__('Send Message', 'bp-profile-message-ux');

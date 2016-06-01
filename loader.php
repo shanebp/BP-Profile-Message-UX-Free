@@ -5,16 +5,18 @@ Description: A BuddyPress plugin. Replaces the functionality for Public and Priv
 Author: shanebp
 License: GPLv2 
 Author URI: http://philogames.com/contact
-Version: 1.4
+Version: 1.5
 */
 
 if ( !defined( 'ABSPATH' ) ) exit;  
 
-define( 'BP_PROFILE_MESSAGE_UX', '1.4' );
+define( 'BP_PROFILE_MESSAGE_UX', '1.5' );
 
 function bp_profile_message_ux_init() {
-    require( dirname( __FILE__ ) . '/bp-profile-message-ux.php' );
-	load_plugin_textdomain( 'bp-profile-message-ux', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );	
+	if ( bp_is_user() ) {
+	    require( dirname( __FILE__ ) . '/bp-profile-message-ux.php' );
+		load_plugin_textdomain( 'bp-profile-message-ux', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );	
+	}
 }
 add_action( 'bp_init', 'bp_profile_message_ux_init' );
 
