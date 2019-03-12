@@ -15,7 +15,7 @@ This BuddyPress plugin replaces the functionality for the Public Message and Pri
 BuddyMessageUX-Free is a BuddyPress plugin. 
 
 Default behavior for the buttons is to take you to your own profile - to compose and send messages from there. 
-Why? Why not stay on the profile page you are viewing? 
+Why? Why not stay on the profile page you are viewing?
 
 Fortunately, BuddyPress makes it easy to replace the functionality for those buttons. 
 With this plugin you can stay on a profile page and send private or public messages to that member.  
