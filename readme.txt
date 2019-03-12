@@ -27,7 +27,7 @@ If you need...
 * adjust the javascript
 * or prefer the use of ajax
  
-... you might be interested in the premium version here:
+...you might be interested in the premium version here:
 http://www.philopress.com/products/buddymessageux/
 
 
